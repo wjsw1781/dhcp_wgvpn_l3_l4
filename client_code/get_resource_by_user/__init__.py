@@ -20,7 +20,15 @@ class get_resource_by_user(get_resource_by_userTemplate):
 
     def button_1_click(self, **event_args):
         """This method is called when the button is clicked"""
-        print(self.card_1.)
+
+        form={
+            "yewu_name":self.text_box_1.text,
+            "yewu_start_time":self.date_picker_1.date,
+            "yewu_end_time":self.date_picker_1.date,
+            "yewu_need_proxy_num":self.text_box_2.text,
+        }
+        anvil.server.call("get_resource_by_user",form)
+        self.refresh_data_bindings()
         pass
 
 
