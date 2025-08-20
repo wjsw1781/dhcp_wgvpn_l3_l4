@@ -1,0 +1,11 @@
+components:
+- layout_properties: {grid_position: 'IDRTZY,IFUFAO'}
+  name: btn_open
+  properties: {text: 打开终端}
+  type: Button
+- layout_properties: {grid_position: 'QOBICA,RATOFZ'}
+  name: terminal_panel
+  properties: {height: 368}
+  type: XYPanel
+container: {type: ColumnPanel}
+is_package: true
