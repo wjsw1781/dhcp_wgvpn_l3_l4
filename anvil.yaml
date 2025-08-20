@@ -17,10 +17,10 @@ db_schema:
   resource_user_status:
     client: none
     columns:
-    - admin_ui: {width: 200}
+    - admin_ui: {order: 0, width: 146}
       name: yewu_name
       type: string
-    - admin_ui: {width: 200}
+    - admin_ui: {order: 1, width: 159}
       name: yewu_start_time
       type: datetime
     - admin_ui: {width: 123}
@@ -29,7 +29,7 @@ db_schema:
     - admin_ui: {width: 73}
       name: yewu_need_proxy_num
       type: string
-    - admin_ui: {width: 449}
+    - admin_ui: {order: 6, width: 215}
       name: ex_json
       type: simpleObject
     - admin_ui: {width: 200}
