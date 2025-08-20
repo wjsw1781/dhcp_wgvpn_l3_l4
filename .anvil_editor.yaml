@@ -3,7 +3,8 @@ unique_ids:
     dashboard.html: U3NUDKZGSLRMPD42UHU6O3CQ322YYEKR
     single-column.html: TTFSJUIWYCWT5DOZBTEL4X4QNVNETWYL
     theme.css: NCIEAP5AISKMFI656YE2ICWD2V2MGUQ4
-  forms: {}
+  forms:
+    login: '1755657545315305303572924.21814'
   modules: {}
   scripts: {}
   server_modules: {}
