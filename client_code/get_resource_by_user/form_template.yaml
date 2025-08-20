@@ -8,7 +8,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'GUYCYW,ROAEII'}
       name: text_box_1
-      properties: {enabled: true, placeholder: 一句话填写您的业务, text: 测试_创建业务, visible: true}
+      properties: {enabled: true, placeholder: 一句话填写您的业务名称(海外/国内  安卓/ios/集群  平台名称), text: '', visible: true}
       type: TextBox
     - layout_properties: {grid_position: 'JFFIMB,BTRQVV'}
       name: label_3
@@ -49,6 +49,11 @@ components:
   name: label_1
   properties: {text: 申请资源_子网_节点}
   type: Label
+- event_bindings: {click: button_2_click}
+  layout_properties: {slot: nav-right}
+  name: button_2
+  properties: {text: 查看自己的业务}
+  type: Button
 container:
   properties: {html: '@theme:dashboard.html'}
   type: HtmlTemplate

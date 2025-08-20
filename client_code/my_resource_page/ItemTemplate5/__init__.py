@@ -18,4 +18,9 @@ class ItemTemplate5(ItemTemplate5Template):
         # Any code you write here will run before the form opens.
         self.label_1.text = self.item['yewu_name']
 
+    def button_1_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        # open_form('get_resource_by_user',self.item)
+        anvil.get_open_form('get_resource_by_user',self.item)
+
 

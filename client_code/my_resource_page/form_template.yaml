@@ -1,6 +1,35 @@
 components:
 - components:
   - components:
+    - components:
+      - layout_properties: {grid_position: 'WBOYXX,BRJJMX'}
+        name: label_2
+        properties: {text: 业务名称}
+        type: Label
+      - layout_properties: {grid_position: 'WBOYXX,DNBASX'}
+        name: label_3
+        properties: {text: 结束时间}
+        type: Label
+      - layout_properties: {grid_position: 'WBOYXX,JVYMNI'}
+        name: label_4
+        properties: {text: 代理数量}
+        type: Label
+      - layout_properties: {grid_position: 'WBOYXX,LUJGAC'}
+        name: label_5
+        properties: {text: 备注}
+        type: Label
+      - layout_properties: {grid_position: 'WBOYXX,ZAWKTV'}
+        name: label_6
+        properties: {align: center, text: 操作修改}
+        type: Label
+      - layout_properties: {grid_position: 'WBOYXX,MZWSPV'}
+        name: label_6_copy
+        properties: {align: center, text: 监控流量}
+        type: Label
+      layout_properties: {grid_position: 'HGVZEO,UYQLDU'}
+      name: card_2
+      properties: {col_widths: '{"BRJJMX":10,"DNBASX":10,"JVYMNI":10,"LUJGAC":10,"ZAWKTV":10,"MZWSPV":10}', role: card}
+      type: ColumnPanel
     - data_bindings:
       - {code: 'self.item['''']', property: items, writeback: false}
       event_bindings: {show: repeating_panel_1_show}

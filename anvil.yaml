@@ -94,6 +94,6 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: my_resource_page, type: form}
+startup: {module: get_resource_by_user, type: form}
 startup_form: null
 uplink_visible: true

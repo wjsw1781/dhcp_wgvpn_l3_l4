@@ -32,4 +32,9 @@ class get_resource_by_user(get_resource_by_userTemplate):
         open_form('my_resource_page')
         pass
 
+    def button_2_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        open_form('my_resource_page')
+
+
 
