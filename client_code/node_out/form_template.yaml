@@ -16,7 +16,6 @@ components:
         columns:
         - {data_key: wg_host, id: MOSVXM, title: wg_host}
         - {data_key: wg_port, id: TYYWOV, title: wg_port}
-        - {data_key: wg_id, id: DBLTDI, title: wg_id}
         - {data_key: wg_account, id: HKLZTA, title: wg_account}
         - {data_key: wg_password, id: ILKLRC, title: wg_password}
         - {data_key: wg_ex_json, id: KOCQZG, title: wg_ex_json}

@@ -1,0 +1,22 @@
+components:
+- layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:dashboard.html'}
+  type: HtmlTemplate
+is_package: true
+slots:
+  slot_1:
+    index: 0
+    set_layout_properties: {grid_position: 'XDGPMC,IONSNA'}
+    target: {name: content_panel, type: container}
+  slot_2:
+    index: 0
+    set_layout_properties: {grid_position: 'FAWNLJ,ZQOIII'}
+    target: {name: content_panel, type: container}
+  slot_3:
+    index: 0
+    set_layout_properties: {grid_position: 'NNJFAN,CZWCLM'}
+    target: {name: content_panel, type: container}

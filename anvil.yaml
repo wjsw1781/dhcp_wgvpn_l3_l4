@@ -1,4 +1,4 @@
-allow_embedding: false
+allow_embedding: true
 db_schema:
   resource_user_status:
     client: none
@@ -84,12 +84,14 @@ db_schema:
     title: wg_vpn_node
 metadata: {logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}
 name: dhcp_wgvpn_l3_l4
+native_deps: null
 package_name: dhcp_wgvpn_l3_l4
 runtime_options:
   client_version: '3'
+  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
   server_spec: {base: python310-minimal}
   server_version: python3-sandbox
-  version: 2
+  version: 3
 services:
 - client_config: {}
   server_config: {}
