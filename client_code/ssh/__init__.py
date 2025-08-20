@@ -1,4 +1,4 @@
-from ._anvil_designer import Form1Template
+from ._anvil_designer import sshTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -12,7 +12,7 @@ from anvil.tables import app_tables
 
 import anvil.js
 
-class Form1(Form1Template):
+class ssh(sshTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
@@ -52,42 +52,17 @@ class Form1(Form1Template):
             
         self.term.onKey(_on_key)
         # 4. 启动轮询定时器
-        # def _poll_once():
-        #     if not self.ssh_token:
-        #         return
-        #     out = anvil.server.call("ssh_recv", self.ssh_token)
-        #     if out:
-        #         self.term.write(out)
-
-        # # 在浏览器端开 setInterval，每 150 ms 调一次 _poll_once
-        # self.poll_handle = anvil.js.window.setInterval(_poll_once, 150)    
-        # # 5. 可写一行欢迎文字
-
-
-
-    # 4. 启动异步轮询
-        self.polling = True
-        self._poll_once()          #
-
-        self.term.write("xterm.js loaded, ssh connecting...\r\n")
-
-# 单次轮询
-    def _poll_once(self):
-        if not (self.polling and self.ssh_token):
-            return
-
-        # 异步调用，不阻塞 UI；返回 Promise/Future
-        future = anvil.server.call_s("ssh_recv", self.ssh_token)
-    
-        # on-done 回调
-        def _after(out):
+        def _poll_once():
+            if not self.ssh_token:
+                return
+            out = anvil.server.call("ssh_recv", self.ssh_token)
             if out:
                 self.term.write(out)
-            # 再过 150 ms 调下一次
-            if self.polling:
-                anvil.js.window.setTimeout(self._poll_once, 150)
-    
-        future.then(_after)
+
+        # 在浏览器端开 setInterval，每 150 ms 调一次 _poll_once
+        self.poll_handle = anvil.js.window.setInterval(_poll_once, 150)    
+        # 5. 可写一行欢迎文字
+        self.term.write("xterm.js loaded, ssh connecting...\r\n")
 
 
     

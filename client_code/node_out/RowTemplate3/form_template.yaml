@@ -4,7 +4,8 @@ components:
   name: button_1
   properties: {background: '#d46e6e', bold: true, font: '', italic: true, text: 删除}
   type: Button
-- layout_properties: {column: SQRSWW}
+- event_bindings: {click: button_2_click}
+  layout_properties: {column: SQRSWW}
   name: button_2
   properties: {text: ssh}
   type: Button
