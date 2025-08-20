@@ -1,5 +1,6 @@
 components:
-- layout_properties: {grid_position: 'IDRTZY,IFUFAO'}
+- event_bindings: {click: btn_open_click}
+  layout_properties: {grid_position: 'IDRTZY,IFUFAO'}
   name: btn_open
   properties: {text: 打开终端}
   type: Button

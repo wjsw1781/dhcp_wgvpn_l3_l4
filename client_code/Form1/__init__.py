@@ -18,44 +18,54 @@ class Form1(Form1Template):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
-
+        self.Terminal = anvil.js.window.Terminal
+        self.ssh_token = None          # 用来保存后端返回的 token
+        self.cache = ""
         self.term = None          # xterm 实例
-        self.poll_timer.interval = 0     # 先关闭定时器
-
+        self.poll_timer={"interval" : 0}     # 先关闭定时器
+    
     # 点击“打开终端”
     def btn_open_click(self, **e):
-        # 1. 等 <script> 标签全部加载
-        anvil.js.wait_until_loaded()
-
-        # 2. 拿到全局构造函数
-        Terminal      = anvil.js.window.Terminal
-        FitAddonClass = anvil.js.window.FitAddon
-
-        # 3. 创建终端并挂到 panel
-        self.term = Terminal.new()
-        fit = FitAddonClass.new()
-        self.term.loadAddon(fit)
-        self.term.open(self.terminal_panel.dom_node)
-        fit.fit()
-
-        # 4. 绑定 xterm 的键盘事件 → 发到后端
-        def on_data(data):
-            anvil.server.call('ssh_send', data)  # 单次写入即可，xterm 已做缓冲
-        self.term.onData(on_data)
-
-        # 5. 启动服务器端 SSH 会话
-        anvil.server.call('ssh_start', 'your_host', 'user', 'password')
-
-        # 6. 开启轮询定时器，实时取回输出
-        self.poll_timer.interval = 0.15   # 150 ms 一次
-
-    # Timer 组件，每 0.15 s 拉一次数据
+        if self.ssh_token:          # 已经打开过就不再重复
+            return
+    
+        # 1. 创建终端并装载到 panel
+        self.term = self.Terminal()
+    
+        div = anvil.js.get_dom_node(self.terminal_panel)
+        self.term.open(div)
+        self.term.focus()
+    
+        # 2. 启动服务器端 SSH 会话，拿到 token
+        self.ssh_token = anvil.server.call(
+            'ssh_start', '10.244.5.254', 'root', '9293'
+        )
+    
+        # 3. 绑定键盘事件（拿到 token 以后再绑定）
+        def _on_key(ev, *_):
+            key = ev.key
+            self.cache += key
+            if '\r\n'
+            anvil.server.call("ssh_send", self.ssh_token, key)
+    
+        self.term.onKey(_on_key)
+        # 4. 启动轮询定时器
+        self.poll_timer['interval'] = 0.15   # 150 ms
+    
+        # 5. 可写一行欢迎文字
+        self.term.write("xterm.js loaded, ssh connecting...\r\n")
+    
+    # Timer 周期拉取服务器输出
     def poll_timer_tick(self, **e):
-        out = anvil.server.call('ssh_recv')
+        if not self.ssh_token:
+            return
+        out = anvil.server.call('ssh_recv', self.ssh_token)
         if out:
             self.term.write(out)
-
-    # 可选：表单关闭时断开
+    
+    # 表单关闭时断开 SSH
     def form_hide(self, **e):
+        if self.ssh_token:
+            anvil.server.call('ssh_close', self.ssh_token)
+            self.ssh_token = None
         self.poll_timer.interval = 0
-        anvil.server.call('ssh_close')
