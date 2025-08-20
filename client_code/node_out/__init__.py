@@ -18,12 +18,36 @@ class node_out(node_outTemplate):
 
     def button_1_click(self, **event_args):
         """This method is called when the button is clicked"""
+        list_columns_all = app_tables.wg_vpn_node.list_columns()
+        list_columns=[]
 
-        print(app_tables.wg_vpn_node.list_columns())
-        data = (
-            "wg_host,wg_port,wg_id,wg_account,wg_password,wg_ex_json\n"
-            "1.1.1.1,51820,1,test_user,123456,{\"dns\":\"8.8.8.8\"}\n"
-        ).encode('utf-8')
-        anvil.BlobMedi
-        return BlobMedia("text/csv", data, name="wg_vpn_node_template.csv")
+        # wg_id 逻辑由后端维护 前端只要安卓
+        for item in list_columns_all:
+            if item["name"] =="wg_id":
+                continue
+            list_columns.append(item)
+            
+        import json
+        cols = [c["name"] for c in list_columns]
+        header = ",".join(cols) + "\n"
+        sample = []
+        for c in list_columns:
+            sample.append(json.dumps({"key": "value"}) if c["type"] == "simpleObject" else "")
+        example_line = ",".join(sample) + "\n"
+        csv_text = header + example_line
+        blob = BlobMedia("text/csv", csv_text.encode("utf-8"),name="wg_vpn_node_template.csv")
+        anvil.media.download(blob)
 
+    def file_loader_1_change(self, file, **event_args):
+        if not file:
+            return
+    
+        try:
+            # 把文件 Media 传到后端
+            anvil.server.call('import_csv_to_wg_vpn_node', file)
+        
+            # 如果页面上有 DataGrid 已做 data-binding，刷新一下即可看到新数据
+            self.refresh_data_bindings()
+    
+        except Exception as e:
+            alert(e)
