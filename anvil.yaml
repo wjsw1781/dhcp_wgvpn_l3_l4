@@ -1,4 +1,4 @@
-allow_embedding: false
+allow_embedding: true
 db_schema:
   users:
     client: none
@@ -29,16 +29,18 @@ db_schema:
       type: datetime
     server: full
     title: Users
-name: Classic 1
-package_name: Classic_1
+metadata: {description: 控制任意流量路由到任意节点, logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png', title: 流量分流}
+name: dhcp_wgvpn_l3_l4
+package_name: dhcp_wgvpn_l3_l4
 runtime_options:
   client_version: '3'
-  server_spec: {base: python310-minimal}
+  server_spec: null
+  server_spec_disabled: {base: python310-minimal, requirements: ''}
   server_version: python3-sandbox
   version: 2
 services:
-- client_config: {}
-  server_config: {}
+- client_config: {enable_v2: false}
+  server_config: {auto_create_missing_columns: true}
   source: /runtime/services/tables.yml
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 365, require_secure_passwords: false, use_email: true, use_facebook: true, use_google: true, use_token: true}
   server_config: {user_table: users}
