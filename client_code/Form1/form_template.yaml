@@ -1,12 +1,17 @@
 components:
-- event_bindings: {click: btn_open_click}
-  layout_properties: {grid_position: 'IDRTZY,IFUFAO'}
-  name: btn_open
-  properties: {text: 打开终端}
-  type: Button
-- layout_properties: {grid_position: 'QOBICA,RATOFZ'}
-  name: terminal_panel
-  properties: {height: 368}
-  type: XYPanel
+- components:
+  - layout_properties: {full_width_row: true, grid_position: '', row_background: 'theme:Sidebar Background'}
+    name: terminal_panel
+    properties: {}
+    type: RichText
+  - event_bindings: {click: btn_open_click}
+    layout_properties: {grid_position: 'KEKQXI,BKPSPS'}
+    name: btn_open
+    properties: {text: 打开终端}
+    type: Button
+  layout_properties: {full_width_row: true, grid_position: 'RRARZQ,HWPYKE'}
+  name: card_1
+  properties: {role: card}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true
