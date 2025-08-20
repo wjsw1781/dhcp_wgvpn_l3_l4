@@ -21,7 +21,7 @@ class node_out(node_outTemplate):
         list_columns_all = app_tables.wg_vpn_node.list_columns()
         list_columns=[]
 
-        # wg_id 逻辑由后端维护 前端只要安卓
+        # wg_id 逻辑由后端维护 前端只要按照要求提供关键节点就行了
         for item in list_columns_all:
             if item["name"] =="wg_id":
                 continue
@@ -44,7 +44,7 @@ class node_out(node_outTemplate):
     
         try:
             # 把文件 Media 传到后端
-            anvil.server.call('import_csv_to_wg_vpn_node', file)
+            anvil.server.call('add_wg_vpn_node', file)
         
             # 如果页面上有 DataGrid 已做 data-binding，刷新一下即可看到新数据
             self.refresh_data_bindings()
