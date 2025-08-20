@@ -1,19 +1,5 @@
 allow_embedding: false
 db_schema:
-  net_subset:
-    client: none
-    columns:
-    - admin_ui: {width: 200}
-      name: net_subset
-      type: string
-    - admin_ui: {width: 200}
-      name: yewu_name
-      type: string
-    - admin_ui: {width: 200}
-      name: ex_json
-      type: string
-    server: full
-    title: net_subset
   resource_user_status:
     client: none
     columns:
@@ -73,6 +59,29 @@ db_schema:
       type: string
     server: full
     title: Users
+  wg_vpn_node:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: wg_host
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: wg_port
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: wg_id
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: wg_account
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: wg_password
+      type: string
+    - admin_ui: {order: 5, width: 200}
+      name: wg_ex_json
+      type: simpleObject
+    server: full
+    title: wg_vpn_node
 metadata: {logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}
 name: dhcp_wgvpn_l3_l4
 package_name: dhcp_wgvpn_l3_l4
