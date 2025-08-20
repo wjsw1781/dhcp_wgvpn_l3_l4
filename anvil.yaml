@@ -29,8 +29,8 @@ db_schema:
       type: datetime
     server: full
     title: Users
-name: Classic 1
-package_name: Classic_1
+name: dhcp_wgvpn_l3_l4
+package_name: dhcp_wgvpn_l3_l4
 runtime_options:
   client_version: '3'
   server_spec: {base: python310-minimal}
