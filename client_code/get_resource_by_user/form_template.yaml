@@ -8,15 +8,16 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'GUYCYW,ROAEII'}
       name: text_box_1
-      properties: {enabled: true, placeholder: 一句话填写您的业务, visible: true}
+      properties: {enabled: true, placeholder: 一句话填写您的业务, text: 测试_创建业务, visible: true}
       type: TextBox
     - layout_properties: {grid_position: 'JFFIMB,BTRQVV'}
       name: label_3
       properties: {text: 业务时间节点(开始--结束)}
       type: Label
-    - layout_properties: {grid_position: 'JFFIMB,LHHHVN'}
+    - data_bindings: []
+      layout_properties: {grid_position: 'JFFIMB,LHHHVN'}
       name: date_picker_1
-      properties: {}
+      properties: {pick_time: true}
       type: DatePicker
     - layout_properties: {grid_position: 'JFFIMB,SCDVID'}
       name: date_picker_2
@@ -26,9 +27,10 @@ components:
       name: label_4
       properties: {text: 业务需要的代理数量}
       type: Label
-    - layout_properties: {grid_position: 'JEEAFD,ZTHOOS'}
+    - data_bindings: []
+      layout_properties: {grid_position: 'JEEAFD,ZTHOOS'}
       name: text_box_2
-      properties: {placeholder: 填写预估的代理数量}
+      properties: {placeholder: 填写预估的代理数量, text: '1111'}
       type: TextBox
     - event_bindings: {click: button_1_click}
       layout_properties: {grid_position: 'NHHIDW,GMSBGL'}

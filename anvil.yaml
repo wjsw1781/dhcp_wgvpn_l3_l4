@@ -3,44 +3,71 @@ db_schema:
   net_subset:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       name: net_subset
       type: string
-    - admin_ui: {order: 1, width: 200}
+    - admin_ui: {width: 200}
       name: yewu_name
       type: string
-    - admin_ui: {order: 2, width: 200}
+    - admin_ui: {width: 200}
       name: ex_json
       type: string
     server: full
     title: net_subset
+  resource_user_status:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: yewu_name
+      type: string
+    - admin_ui: {width: 200}
+      name: yewu_start_time
+      type: datetime
+    - admin_ui: {width: 123}
+      name: yewu_end_time
+      type: datetime
+    - admin_ui: {width: 73}
+      name: yewu_need_proxy_num
+      type: string
+    - admin_ui: {width: 449}
+      name: ex_json
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: user
+      target: users
+      type: link_single
+    server: full
+    title: resource_user_status
   users:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       name: email
       type: string
-    - admin_ui: {order: 1, width: 200}
+    - admin_ui: {width: 200}
       name: enabled
       type: bool
-    - admin_ui: {order: 2, width: 200}
+    - admin_ui: {width: 200}
       name: last_login
       type: datetime
-    - admin_ui: {order: 3, width: 200}
+    - admin_ui: {width: 200}
       name: password_hash
       type: string
-    - admin_ui: {order: 4, width: 200}
+    - admin_ui: {width: 200}
       name: n_password_failures
       type: number
-    - admin_ui: {order: 5, width: 200}
+    - admin_ui: {width: 200}
       name: confirmed_email
       type: bool
-    - admin_ui: {order: 6, width: 200}
+    - admin_ui: {width: 200}
       name: remembered_logins
       type: simpleObject
-    - admin_ui: {order: 7, width: 200}
+    - admin_ui: {width: 200}
       name: signed_up
       type: datetime
+    - admin_ui: {width: 200}
+      name: email_confirmation_key
+      type: string
     server: full
     title: Users
 metadata: {logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}
@@ -67,6 +94,6 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: get_resource_by_user, type: form}
+startup: {module: my_resource_page, type: form}
 startup_form: null
 uplink_visible: true
