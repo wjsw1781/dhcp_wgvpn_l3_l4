@@ -19,12 +19,15 @@ class my_resource_page(my_resource_pageTemplate):
 
     def repeating_panel_1_show(self, **event_args):
         """This method is called when the repeating panel is shown on the screen"""
-    
-        me = anvil.users.get_user()
 
+        me = anvil.users.get_user()
         data = anvil.server.call('show_resource', me)
-        print(data)
         self.repeating_panel_1.items = data
+
+    def button_1_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        anvil.open_form('get_resource_by_user')
+
 
 
         

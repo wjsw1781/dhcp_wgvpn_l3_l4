@@ -21,6 +21,15 @@ class ItemTemplate5(ItemTemplate5Template):
     def button_1_click(self, **event_args):
         """This method is called when the button is clicked"""
         # open_form('get_resource_by_user',self.item)
-        anvil.get_open_form('get_resource_by_user',self.item)
+        # anvil.get_open_form('get_resource_by_user',self.item)
+        anvil.open_form('get_resource_by_user',resource=self.item)
+
+    def button_3_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        rowId = self.item.get_id()
+        anvil.server.call('delete_resource',rowId)
+        self.remove_from_parent()
+
+        pass
 
 

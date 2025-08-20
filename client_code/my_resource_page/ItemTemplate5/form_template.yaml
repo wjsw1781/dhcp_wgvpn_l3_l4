@@ -28,6 +28,11 @@ components:
   name: button_1
   properties: {text: 修改}
   type: Button
+- event_bindings: {click: button_3_click}
+  layout_properties: {grid_position: 'ICLNGJ,RMVURJ XAHFHW,WLFEZK'}
+  name: button_3
+  properties: {text: 删除}
+  type: Button
 - layout_properties: {grid_position: 'ICLNGJ,RMVURJ XAHFHW,CEFLVI'}
   name: button_2
   properties: {text: 流量监控}

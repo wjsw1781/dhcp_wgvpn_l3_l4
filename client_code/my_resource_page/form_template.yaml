@@ -20,7 +20,11 @@ components:
         type: Label
       - layout_properties: {grid_position: 'WBOYXX,ZAWKTV'}
         name: label_6
-        properties: {align: center, text: 操作修改}
+        properties: {align: center, text: 修改}
+        type: Label
+      - layout_properties: {grid_position: 'WBOYXX,LWAHBB'}
+        name: label_7
+        properties: {text: 删除}
         type: Label
       - layout_properties: {grid_position: 'WBOYXX,MZWSPV'}
         name: label_6_copy
@@ -49,6 +53,11 @@ components:
   name: label_1
   properties: {text: 我的网络资源申请}
   type: Label
+- event_bindings: {click: button_1_click}
+  layout_properties: {slot: nav-right}
+  name: button_1
+  properties: {text: 添加需求}
+  type: Button
 container:
   properties: {html: '@theme:dashboard.html'}
   type: HtmlTemplate
