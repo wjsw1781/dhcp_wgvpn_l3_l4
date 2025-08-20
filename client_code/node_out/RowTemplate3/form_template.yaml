@@ -1,5 +1,6 @@
 components:
-- layout_properties: {column: MDCNFE}
+- event_bindings: {click: button_1_click}
+  layout_properties: {column: MDCNFE}
   name: button_1
   properties: {background: '#d46e6e', bold: true, font: '', italic: true, text: 删除}
   type: Button

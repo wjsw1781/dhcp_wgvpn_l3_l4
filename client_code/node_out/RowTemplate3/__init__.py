@@ -16,3 +16,9 @@ class RowTemplate3(RowTemplate3Template):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
+
+    def button_1_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        anvil.server.call('del_wg_vpn_node',self.item)
+        self.remove_from_parent()
+        pass

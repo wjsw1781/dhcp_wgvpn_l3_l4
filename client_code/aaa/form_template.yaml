@@ -1,7 +1,12 @@
 components:
 - components:
   - components:
-    - event_bindings: {click: link_1_click}
+    - components:
+      - layout_properties: {grid_position: 'HSTZAN,UFNZUK'}
+        name: link_5
+        properties: {align: center, text: 公网节点}
+        type: Link
+      event_bindings: {click: link_1_click}
       layout_properties: {grid_position: 'ONVQBX,WKZDZO'}
       name: link_1
       properties: {align: left, background: 'theme:Sidebar Background', bold: true, font_size: 10, italic: false, text: 出口节点, underline: false, visible: true}
@@ -20,7 +25,7 @@ components:
       name: link_2
       properties: {font_size: 10, text: 申请资源}
       type: Link
-    layout_properties: {expand: false, width: 109.80081875}
+    layout_properties: {expand: false, width: 148.7345}
     name: card_1
     properties: {background: 'theme:Sidebar Background', role: card, visible: true}
     type: ColumnPanel
