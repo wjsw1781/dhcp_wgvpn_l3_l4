@@ -42,7 +42,7 @@ container:
   event_bindings: {}
   properties: {col_widths: '{"JTSDRJ":10,"RMVURJ":50}'}
   type: ColumnPanel
-custom_component: true
+custom_component: false
 is_package: true
 item_type: {table_id: 1000100}
 properties:

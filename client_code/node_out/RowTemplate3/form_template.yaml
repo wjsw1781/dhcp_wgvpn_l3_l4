@@ -1,3 +1,11 @@
-components: []
+components:
+- layout_properties: {column: MDCNFE}
+  name: button_1
+  properties: {background: '#d46e6e', bold: true, font: '', italic: true, text: 删除}
+  type: Button
+- layout_properties: {column: SQRSWW}
+  name: button_2
+  properties: {text: ssh}
+  type: Button
 container: {type: DataRowPanel}
 is_package: true

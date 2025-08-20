@@ -52,3 +52,19 @@ class node_out(node_outTemplate):
     
         except Exception as e:
             alert(e)
+
+    def link_1_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('node_out')
+
+    def link_2_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('get_resource_by_user')
+
+    def link_3_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('my_resource_page')
+
+    def button_2_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        pass

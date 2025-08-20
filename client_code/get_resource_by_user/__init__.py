@@ -51,5 +51,17 @@ class get_resource_by_user(get_resource_by_userTemplate):
         """This method is called when the column panel is shown on the screen"""
         pass
 
+    def link_1_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('node_out')
+
+    def link_3_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('my_resource_page')
+
+    def link_2_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('get_resource_by_user')
+
 
 

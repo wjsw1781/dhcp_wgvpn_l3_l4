@@ -59,8 +59,12 @@ components:
   name: button_2
   properties: {text: 查看自己的业务}
   type: Button
+- layout_properties: {slot: sidebar}
+  name: aaa_1
+  properties: {}
+  type: form:aaa
 container:
   properties: {html: '@theme:dashboard.html'}
   type: HtmlTemplate
-custom_component: true
+custom_component: false
 is_package: true

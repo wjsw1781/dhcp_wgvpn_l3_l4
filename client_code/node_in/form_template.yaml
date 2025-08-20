@@ -1,35 +1,9 @@
 components:
-- components:
-  - components:
-    - layout_properties: {grid_position: 'VQUQHW,AAOAGG'}
-      name: drop_down_1
-      properties: {include_placeholder: true, placeholder: 业务名称}
-      type: DropDown
-    - layout_properties: {grid_position: 'VQUQHW,BZGFYQ SKAQXB,BVFLAG'}
-      name: drop_down_1_copy
-      properties: {include_placeholder: true, placeholder: 地理位置}
-      type: DropDown
-    - layout_properties: {grid_position: 'VQUQHW,BZGFYQ SKAQXB,EKRHXZ'}
-      name: button_1
-      properties: {text: 查询入口节点}
-      type: Button
-    - layout_properties: {grid_position: 'JHHIBI,TIJCKG'}
-      name: repeating_panel_2
-      properties: {item_template: node_in.ItemTemplate2}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'HGXZKZ,KZPABD'}
-    name: card_1
-    properties: {col_widths: '{"AAOAGG":20,"BZGFYQ":40,"BVFLAG":35,"EKRHXZ":25}', role: card}
-    type: ColumnPanel
-  layout_properties: {slot: default}
+- layout_properties: {slot: default}
   name: content_panel
   properties: {}
   type: ColumnPanel
-- layout_properties: {slot: title}
-  name: label_1
-  properties: {align: center, text: 入口节点}
-  type: Label
 container:
-  properties: {html: '@theme:dashboard.html'}
+  properties: {html: '@theme:single-column.html'}
   type: HtmlTemplate
 is_package: true

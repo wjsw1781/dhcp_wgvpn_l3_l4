@@ -80,6 +80,9 @@ db_schema:
     - admin_ui: {order: 5, width: 200}
       name: wg_ex_json
       type: simpleObject
+    - admin_ui: {order: 6, width: 200}
+      name: nat_ip
+      type: string
     server: full
     title: wg_vpn_node
 metadata: {logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}

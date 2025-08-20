@@ -58,6 +58,10 @@ components:
   name: button_1
   properties: {text: 添加需求}
   type: Button
+- layout_properties: {slot: sidebar}
+  name: aaa_1
+  properties: {}
+  type: form:aaa
 container:
   properties: {html: '@theme:dashboard.html'}
   type: HtmlTemplate

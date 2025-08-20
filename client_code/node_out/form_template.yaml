@@ -1,11 +1,21 @@
 components:
 - components:
   - components:
-    - event_bindings: {change: file_loader_1_change}
-      layout_properties: {grid_position: 'VDVNKT,IDRTHL'}
-      name: file_loader_1
-      properties: {text: 增加vps 节点}
-      type: FileLoader
+    - components:
+      - event_bindings: {change: file_loader_1_change}
+        layout_properties: {grid_position: 'WSGDBU,CKOYOK'}
+        name: file_loader_1
+        properties: {text: 增加vps 节点}
+        type: FileLoader
+      - event_bindings: {click: button_2_click}
+        layout_properties: {grid_position: 'WSGDBU,QVPALY'}
+        name: button_2
+        properties: {text: 一键组网}
+        type: Button
+      layout_properties: {grid_position: 'MUSXXN,XFTGHO'}
+      name: card_2
+      properties: {role: card}
+      type: ColumnPanel
     - components:
       - name: repeating_panel_1
         properties: {item_template: node_out.RowTemplate3}
@@ -18,7 +28,9 @@ components:
         - {data_key: wg_port, id: TYYWOV, title: wg_port}
         - {data_key: wg_account, id: HKLZTA, title: wg_account}
         - {data_key: wg_password, id: ILKLRC, title: wg_password}
-        - {data_key: wg_ex_json, id: KOCQZG, title: wg_ex_json}
+        - {data_key: column_1, id: MDCNFE, title: 删除}
+        - {data_key: column_1, id: SQRSWW, title: 内网ssh}
+        - {data_key: nat_ip, id: ONHQEB, title: nat_ip}
       type: DataGrid
     layout_properties: {grid_position: 'BQDYDY,KKYPKT'}
     name: card_1
@@ -28,16 +40,17 @@ components:
   name: content_panel
   properties: {}
   type: ColumnPanel
-- layout_properties: {slot: title}
-  name: label_1
-  properties: {text: 出口节点}
-  type: Label
 - event_bindings: {click: button_1_click}
   layout_properties: {slot: nav-right}
   name: button_1
   properties: {text: 下载模板}
   type: Button
+- layout_properties: {slot: sidebar}
+  name: aaa_1
+  properties: {}
+  type: form:aaa
 container:
   properties: {html: '@theme:dashboard.html'}
   type: HtmlTemplate
+custom_component: false
 is_package: true
