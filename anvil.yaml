@@ -1,5 +1,19 @@
 allow_embedding: false
 db_schema:
+  net_subset:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: net_subset
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: yewu_name
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: ex_json
+      type: string
+    server: full
+    title: net_subset
   users:
     client: none
     columns:
@@ -53,6 +67,6 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: node_in, type: form}
+startup: {module: get_resource_by_user, type: form}
 startup_form: null
 uplink_visible: true
