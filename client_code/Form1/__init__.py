@@ -45,7 +45,7 @@ class Form1(Form1Template):
         def _on_key(ev, *_):
             key = ev.key
             self.cache += key
-            if '\r\n'
+            if '\r\n' not 
             anvil.server.call("ssh_send", self.ssh_token, key)
     
         self.term.onKey(_on_key)
