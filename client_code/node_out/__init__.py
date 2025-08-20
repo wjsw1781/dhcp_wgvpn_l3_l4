@@ -24,6 +24,5 @@ class node_out(node_outTemplate):
             "wg_host,wg_port,wg_id,wg_account,wg_password,wg_ex_json\n"
             "1.1.1.1,51820,1,test_user,123456,{\"dns\":\"8.8.8.8\"}\n"
         ).encode('utf-8')
-        anvil.BlobMedi
         return BlobMedia("text/csv", data, name="wg_vpn_node_template.csv")
 
