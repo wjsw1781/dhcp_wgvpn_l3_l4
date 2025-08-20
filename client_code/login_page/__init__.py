@@ -1,4 +1,4 @@
-from ._anvil_designer import loginTemplate
+from ._anvil_designer import login_pageTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -10,11 +10,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class login(loginTemplate):
+class login_page(login_pageTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
 
-        while not anvil.users.get_user():
-            anvil.users.login_with_form()
         # Any code you write here will run before the form opens.

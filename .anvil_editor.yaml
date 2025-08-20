@@ -1,10 +1,13 @@
 unique_ids:
   assets:
+    Snipaste_2025-08-20_10-50-39.png: '1755658398840923242607314.3718'
     dashboard.html: U3NUDKZGSLRMPD42UHU6O3CQ322YYEKR
     single-column.html: TTFSJUIWYCWT5DOZBTEL4X4QNVNETWYL
     theme.css: NCIEAP5AISKMFI656YE2ICWD2V2MGUQ4
   forms:
     login: '1755657545315305303572924.21814'
+    login_page: '1755658570674978907256859.0072'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    get_arp: '1755658528592972161937816.46'
