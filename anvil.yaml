@@ -1,5 +1,10 @@
 allow_embedding: true
 db_schema:
+  minipc_node:
+    client: none
+    columns: []
+    server: full
+    title: minipc_node
   resource_user_status:
     client: none
     columns:

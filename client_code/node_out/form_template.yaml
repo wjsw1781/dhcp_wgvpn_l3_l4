@@ -48,7 +48,7 @@ components:
 - layout_properties: {slot: sidebar}
   name: aaa_1
   properties: {}
-  type: form:aaa
+  type: form:a_navigator
 container:
   properties: {html: '@theme:dashboard.html'}
   type: HtmlTemplate

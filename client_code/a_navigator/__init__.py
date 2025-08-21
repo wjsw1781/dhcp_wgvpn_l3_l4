@@ -1,4 +1,4 @@
-from ._anvil_designer import aaaTemplate
+from ._anvil_designer import a_navigatorTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -10,7 +10,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class aaa(aaaTemplate):
+class a_navigator(a_navigatorTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
@@ -20,7 +20,7 @@ class aaa(aaaTemplate):
 
     def link_1_click(self, **event_args):
         """This method is called when the link is clicked"""
-        open_form('node_out')
+        pass
 
     def link_2_click(self, **event_args):
         """This method is called when the link is clicked"""
@@ -29,5 +29,9 @@ class aaa(aaaTemplate):
     def link_3_click(self, **event_args):
         """This method is called when the link is clicked"""
         open_form('my_resource_page')
+
+    def gongwagn_vps_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('node_out')
 
 

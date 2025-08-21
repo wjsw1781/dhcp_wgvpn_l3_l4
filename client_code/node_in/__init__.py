@@ -1,4 +1,5 @@
-from ._anvil_designer import node_inTemplate
+in
+    from ._anvil_designer import node_inTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -16,3 +17,61 @@ class node_in(node_inTemplate):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
+        self.repeating_panel_1.items = app_tables.wg_vpn_node.search()
+
+    def button_1_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        list_columns_all = app_tables.wg_vpn_node.list_columns()
+        list_columns = []
+
+        # wg_id 逻辑由后端维护 前端只要按照要求提供关键节点就行了
+        for item in list_columns_all:
+            if item["name"] == "wg_id":
+                continue
+            list_columns.append(item)
+
+        import json
+
+        cols = [c["name"] for c in list_columns]
+        header = ",".join(cols) + "\n"
+        sample = []
+        for c in list_columns:
+            sample.append(
+                json.dumps({"key": "value"}) if c["type"] == "simpleObject" else ""
+            )
+        example_line = ",".join(sample) + "\n"
+        csv_text = header + example_line
+        blob = BlobMedia(
+            "text/csv", csv_text.encode("utf-8"), name="wg_vpn_node_template.csv"
+        )
+        anvil.media.download(blob)
+
+    def file_loader_1_change(self, file, **event_args):
+        if not file:
+            return
+
+        try:
+            # 把文件 Media 传到后端
+            anvil.server.call("add_wg_vpn_node", file)
+
+            # 如果页面上有 DataGrid 已做 data-binding，刷新一下即可看到新数据
+            self.refresh_data_bindings()
+
+        except Exception as e:
+            alert(e)
+
+    def link_1_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form("node_out")
+
+    def link_2_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form("get_resource_by_user")
+
+    def link_3_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form("my_resource_page")
+
+    def button_2_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        pass
