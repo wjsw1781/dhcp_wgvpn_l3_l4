@@ -1,41 +1,77 @@
 components:
 - components:
   - components:
+    - components: []
+      event_bindings: {click: link_1_click}
+      layout_properties: {grid_position: 'DITTYS,VMLCAP'}
+      name: abs_center_server
+      properties: {align: left, background: 'theme:Sidebar Background', bold: true, font_size: 10, italic: false, text: 中心节点, underline: false, visible: true}
+      type: Link
     - components:
       - components: []
-        event_bindings: {click: gongwagn_vps_click}
+        event_bindings: {click: gongwang_vps_click}
         layout_properties: {grid_position: 'HSTZAN,UFNZUK'}
-        name: gongwagn_vps
+        name: gongwang_vps
         properties: {align: center, font_size: 10, text: 公网节点}
         type: Link
       - components: []
         event_bindings: {click: gongwagn_vps_click}
         layout_properties: {grid_position: 'ASCNZU,FWRYRA'}
-        name: gongwagn_vps_copy
+        name: nat_vps
         properties: {align: center, col_spacing: tiny, font_size: 10, text: 私网节点}
-        type: Link
-      - event_bindings: {click: gongwagn_vps_click}
-        layout_properties: {grid_position: 'FRJUUL,KILTZG'}
-        name: gongwagn_vps_copy_copy
-        properties: {align: center, col_spacing: tiny, font_size: 10, text: 四层节点}
         type: Link
       event_bindings: {click: link_1_click}
       layout_properties: {grid_position: 'ONVQBX,WKZDZO'}
       name: link_1
       properties: {align: left, background: 'theme:Sidebar Background', bold: true, font_size: 10, italic: false, text: 出口节点, underline: false, visible: true}
       type: Link
-    - layout_properties: {grid_position: 'OIYXLJ,UNGZJT'}
-      name: link_4
-      properties: {align: left, font_size: 10, text: 入口节点}
+    - components:
+      - event_bindings: {click: gongwagn_vps_click}
+        layout_properties: {grid_position: 'HSTZAN,UFNZUK'}
+        name: gongwang_minipc
+        properties: {align: center, font_size: 10, text: 公网节点}
+        type: Link
+      - event_bindings: {click: gongwagn_vps_click}
+        layout_properties: {grid_position: 'ASCNZU,FWRYRA'}
+        name: nat_minipc
+        properties: {align: center, col_spacing: tiny, font_size: 10, text: 私网节点}
+        type: Link
+      event_bindings: {click: link_1_click}
+      layout_properties: {grid_position: 'QDWYBU,KKGEAY'}
+      name: link_1_copy
+      properties: {align: left, background: 'theme:Sidebar Background', bold: true, font_size: 10, italic: false, text: 入口节点, underline: false, visible: true}
       type: Link
-    - event_bindings: {click: link_3_click}
+    - components:
+      - event_bindings: {click: gongwagn_vps_click}
+        layout_properties: {grid_position: 'YUYZGS,IKTVBM'}
+        name: node_map
+        properties: {align: center, col_spacing: tiny, font_size: 10, text: ' 节点地图'}
+        type: Link
+      - components: []
+        event_bindings: {click: gongwagn_vps_click}
+        layout_properties: {grid_position: 'ASCNZU,FWRYRA'}
+        name: global_route_rule
+        properties: {align: center, col_spacing: tiny, font_size: 10, text: 全局路由表链路}
+        type: Link
+      event_bindings: {click: link_1_click}
+      layout_properties: {grid_position: 'EAOOOR,YHYOUZ'}
+      name: global_node
+      properties: {align: left, background: 'theme:Sidebar Background', bold: true, font_size: 10, italic: false, text: 全局节点, underline: false, visible: true}
+      type: Link
+    - event_bindings: {click: gongwagn_vps_click}
+      layout_properties: {grid_position: 'MDWXCV,BNYWUQ'}
+      name: nat_sub_plan
+      properties: {align: left, font_size: 10, text: 组网网段划分}
+      type: Link
+    - components: []
+      event_bindings: {click: job_show_click}
       layout_properties: {grid_position: 'QTXTFC,QMMGBB'}
-      name: link_3
-      properties: {font_size: 10, text: 我的业务}
+      name: job_show
+      properties: {font_size: 10, text: 业务概览}
       type: Link
-    - event_bindings: {click: link_2_click}
+    - event_bindings: {click: use_node_on_job_click}
       layout_properties: {grid_position: 'PCYAUU,WVOPZJ'}
-      name: link_2
+      name: use_node_on_job
       properties: {font_size: 10, text: 申请资源}
       type: Link
     layout_properties: {expand: false, width: 183.91059375}

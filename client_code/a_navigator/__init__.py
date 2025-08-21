@@ -22,15 +22,15 @@ class a_navigator(a_navigatorTemplate):
         """This method is called when the link is clicked"""
         pass
 
-    def link_2_click(self, **event_args):
+    def use_node_on_job_click(self, **event_args):
         """This method is called when the link is clicked"""
         open_form('get_resource_by_user')
 
-    def link_3_click(self, **event_args):
+    def job_show_click(self, **event_args):
         """This method is called when the link is clicked"""
         open_form('my_resource_page')
 
-    def gongwagn_vps_click(self, **event_args):
+    def gongwang_vps_click(self, **event_args):
         """This method is called when the link is clicked"""
         open_form('node_out')
 
